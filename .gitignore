@@ -10,3 +10,5 @@ image.db
 *.csv
 dump.rdb
 /*.txt
+config
+firebaseKey.json

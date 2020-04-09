@@ -27,6 +27,7 @@
     "webpack-node-externals": "^1.7.2"
   },
   "dependencies": {
-    "commander": "^5.0.0"
+    "commander": "^5.0.0",
+    "firebase-admin": "^8.10.0"
   }
 }

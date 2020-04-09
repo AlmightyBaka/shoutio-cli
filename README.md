@@ -3,6 +3,8 @@
 
 ### Prerequisites
 
+Put the Firebase admin key into `firebaseKey.json`
+
 Following environment variables should be accessible (via a `.env` file or cli):
 
 ```
