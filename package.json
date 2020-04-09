@@ -1,0 +1,32 @@
+{
+  "name": "",
+  "version": "1.0.0",
+  "description": "",
+  "author": "",
+  "scripts": {
+    "build": "webpack",
+    "watch": "webpack --watch",
+    "lint": "tslint --project tsconfig.json",
+    "fix": "tslint --project tsconfig.json --fix",
+    "test": "NODE_ENV=test mocha --recursive --require ts-node/register test/**/**.ts"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.1.2",
+    "@types/commander": "^2.12.2",
+    "@types/mocha": "^7.0.2",
+    "@types/node": "^13.11.1",
+    "chai": "^4.1.2",
+    "mocha": "^7.1.1",
+    "ts-loader": "^6.2.2",
+    "ts-node": "^8.8.2",
+    "tslint": "^6.1.1",
+    "tslint-loader": "^3.5.3",
+    "typescript": "^3.8.3",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "dependencies": {
+    "commander": "^5.0.0"
+  }
+}
