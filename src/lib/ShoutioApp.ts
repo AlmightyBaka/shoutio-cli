@@ -37,14 +37,13 @@ export default class ShoutioApp {
         if (!await this.channelExists(channelName)) {
           return false
         }
-      
+
         await this.db.collection('Channel').doc(channelName)
           .collection('Messages').add({
             message,
             createdAt: new Date()
           })
-      
-  
+
         return true
     }
 

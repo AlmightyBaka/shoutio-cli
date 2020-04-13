@@ -1,4 +1,4 @@
-import ShoutioApp from "./lib/ShoutioApp"
+import ShoutioApp from './lib/ShoutioApp'
 
 export async function listen(channelName: string) {
     const fb = new ShoutioApp()
