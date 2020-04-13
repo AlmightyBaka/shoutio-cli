@@ -1,24 +1,25 @@
 import { program } from 'commander'
 
-import fbInit from './lib/firebase'
-import FirebaseApp from './lib/firebase'
+import fbInit from './lib/ShoutioApp'
+import ShoutioApp from './lib/ShoutioApp'
+import { listen, say } from './cliApp'
 
 
 console.log('it works!')
 
 program
-  .command('listen')
+  .command('listen <channelName>')
   .description('listen to messages in a directory')
-  .action(() => {
-    console.log('listen command called')
-    const fb = new FirebaseApp()
+  .action(async (channelName) => {
+      await listen(channelName)
   })
 
 program
-  .command('say <message>')
+  .command('say <channelName> <message>')
   .description('send message to a directory')
-  .action((message) => {
-    console.log(`said ${message}`)
+  .action(async (channelName, message) => {
+    console.log(await say(channelName, message))
+
   })
 
 program.parse(process.argv)
