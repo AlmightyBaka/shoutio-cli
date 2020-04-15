@@ -1,7 +1,7 @@
 
 # Shoutio
 
-Simple messager example with a CLI interface based on Google Firebase Firestore real-time storage .
+Simple messager example with a CLI interface based on Google Firebase Firestore real-time storage.
 
 ### Prerequisites
 
