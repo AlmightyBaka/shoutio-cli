@@ -1,20 +1,20 @@
 
-# Project name
+# Shoutio
+
+Simple messager example based on Google Firebase Firestore real-time storage with a CLI interface.
 
 ### Prerequisites
 
 Put the Firebase admin key into `firebaseKey.json`
 
-Following environment variables should be accessible (via a `.env` file or cli):
-
-```
-```
-
-After making sure you have entered your environment variables and saved ***.env*** file, you need to install Node.js dependencies by navigating to app directory in console and running `npm install` command. After all dependencies are finished installing, build the app with Webpack by running `npm build`.
-
 ### Running
 
+```
+Options:
+  -h, --help                   display help for command
 
-### CLI Usage
-
-* `command_1` - description
+Commands:
+  listen <channelName>         listen to messages in a directory
+  say <channelName> <message>  send message to a directory
+  help [command]               display help for command
+```
