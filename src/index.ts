@@ -1,11 +1,7 @@
 import { program } from 'commander'
 
-import fbInit from './lib/ShoutioApp'
-import ShoutioApp from './lib/ShoutioApp'
 import { listen, say } from './cliApp'
 
-
-console.log('it works!')
 
 program
   .command('listen <channelName>')

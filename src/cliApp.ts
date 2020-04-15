@@ -9,6 +9,8 @@ export async function listen(channelName: string) {
     } else {
         console.log(`channel ${'test'} already exists`)
     }
+
+    fb.listen('test')
 }
 
 export async function say(channelName: string, message: string): Promise<boolean> {

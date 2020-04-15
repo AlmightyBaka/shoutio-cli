@@ -48,23 +48,13 @@ export default class ShoutioApp {
     }
 
     async listen(channelName: string): Promise<void> {
-        const db = firebase.firestore()
-
-        const data = await db.collection('Channel').doc('hrqKHdvvwOvghyM2OEWp').get()
-        console.log(data.exists)
-        console.log(await data.data())
-
-        const messages = await db.collection('Channel').doc('hrqKHdvvwOvghyM2OEWp').collection('Messages').doc().get()
-        console.log(messages.exists)
-        console.log(await messages.data())
-
-
-        const doc = await db.collection('Channel').doc('hrqKHdvvwOvghyM2OEWp').collection('Messages').doc()
-        doc.onSnapshot(async docSnapshot => {
-            console.log('Received doc snapshot:')
-            console.log(await docSnapshot.data())
+        const doc = await this.db.collection('Channel').doc(channelName)
+          .collection('Messages').onSnapshot(async docSnapshot => {
+              docSnapshot.docChanges().forEach(change => {
+                  console.log(`Received new message: ${change.doc.data().message}`)
+                })
           }, err => {
-            console.log(`Encountered error: ${err}`)
+              console.log(`Encountered error: ${err}`)
           })
     }
 }
