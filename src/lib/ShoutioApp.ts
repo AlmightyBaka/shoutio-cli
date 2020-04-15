@@ -47,11 +47,11 @@ export default class ShoutioApp {
         return true
     }
 
-    async listen(channelName: string): Promise<void> {
+    async listen(channelName: string, messageReceivedCb: (data: any) => void): Promise<void> {
         const doc = await this.db.collection('Channel').doc(channelName)
           .collection('Messages').onSnapshot(async docSnapshot => {
               docSnapshot.docChanges().forEach(change => {
-                  console.log(`Received new message: ${change.doc.data().message}`)
+                  messageReceivedCb(change.doc.data())
                 })
           }, err => {
               console.log(`Encountered error: ${err}`)

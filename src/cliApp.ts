@@ -1,5 +1,9 @@
 import ShoutioApp from './lib/ShoutioApp'
 
+function messageReceivedCb(data: any): void {
+    console.log(`Received new message: ${data.message}`)
+}
+
 export async function listen(channelName: string) {
     const fb = new ShoutioApp()
 
@@ -10,7 +14,8 @@ export async function listen(channelName: string) {
         console.log(`channel ${'test'} already exists`)
     }
 
-    fb.listen('test')
+
+    fb.listen('test', messageReceivedCb)
 }
 
 export async function say(channelName: string, message: string): Promise<boolean> {
